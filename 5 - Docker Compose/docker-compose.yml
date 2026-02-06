@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  # Web server service
+  web:
+    image: nginx:latest
+    container_name: workshop-web
+    ports:
+      - "8080:80"
+    volumes:
+      - ./html:/usr/share/nginx/html
+      - ./config/nginx.conf:/etc/nginx/nginx.conf:ro
+    networks:
+      - workshop-network
+    depends_on:
+      - db
+
+  # Database service
+  db:
+    image: mysql:8.0
+    container_name: workshop-db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: workshop_db
+      MYSQL_USER: workshop_user
+      MYSQL_PASSWORD: workshop_password
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - workshop-network
+
+volumes:
+  db_data:
+
+networks:
+  workshop-network:
+    driver: bridge

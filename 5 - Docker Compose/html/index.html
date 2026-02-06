@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker Workshop - Docker Compose</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .info {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin: 20px 0;
+        }
+        .services {
+            margin: 20px 0;
+        }
+        .service {
+            background-color: #e8f4f8;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border-left: 4px solid #27ae60;
+        }
+        .service h3 {
+            margin-top: 0;
+            color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐳 Docker Compose Workshop</h1>
+        
+        <div class="info">
+            <p><strong>Welcome!</strong> This page is served by a containerized Nginx web server running in Docker Compose.</p>
+        </div>
+
+        <h2>Running Services</h2>
+        <div class="services">
+            <div class="service">
+                <h3>🌐 Web Server (Nginx)</h3>
+                <p>This is the nginx container serving your web content.</p>
+                <p><strong>Port:</strong> 8080 (host) → 80 (container)</p>
+            </div>
+            <div class="service">
+                <h3>🗄️ Database (MySQL)</h3>
+                <p>The database container is running and accessible to other services on the network.</p>
+                <p><strong>Hostname:</strong> db (on the workshop-network)</p>
+                <p><strong>Port:</strong> 3306 (only accessible within the network)</p>
+            </div>
+        </div>
+
+        <h2>Docker Compose Concepts Used</h2>
+        <ul>
+            <li><strong>Multiple Services:</strong> Web and database containers orchestrated together</li>
+            <li><strong>Volumes:</strong> Database data persists with named volumes</li>
+            <li><strong>Bind Mounts:</strong> Configuration files and HTML from the host</li>
+            <li><strong>Networking:</strong> Services communicate via a custom bridge network</li>
+            <li><strong>Dependencies:</strong> Web service depends on database service</li>
+            <li><strong>Environment Variables:</strong> Used to configure database credentials</li>
+        </ul>
+
+        <h2>Try These Commands</h2>
+        <pre style="background-color: #f8f9fa; padding: 15px; border-radius: 4px; overflow-x: auto;">
+# Start the services
+docker compose up -d
+
+# View logs
+docker compose logs -f
+
+# List running containers
+docker compose ps
+
+# Stop the services
+docker compose down
+
+# Stop and remove all data
+docker compose down -v
+        </pre>
+    </div>
+</body>
+</html>

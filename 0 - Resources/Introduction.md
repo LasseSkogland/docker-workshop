@@ -1,6 +1,3 @@
-# Docker Workshop: Introduction
-This is initially meant to be instructor led material, but can be used for self-study as well.
-
 ## What is Docker?
 
 Docker is a containerization platform that packages applications and their dependencies into isolated, standardized units called **containers**. Containers include everything an application needs to run: code, runtime, system tools, libraries, and settings.
@@ -183,19 +180,19 @@ docker network connect mynetwork CONTAINER_ID
 
 **Start services**
 ```bash
-docker-compose up                    # Start services
-docker-compose up -d                 # Start in background
+docker compose up                    # Start services
+docker compose up -d                 # Start in background
 ```
 
 **Stop services**
 ```bash
-docker-compose down                  # Stop and remove
-docker-compose stop                  # Just stop (don't remove)
+docker compose down                  # Stop and remove
+docker compose stop                  # Just stop (don't remove)
 ```
 
 **View service logs**
 ```bash
-docker-compose logs -f SERVICE_NAME
+docker compose logs -f SERVICE_NAME
 ```
 
 ---

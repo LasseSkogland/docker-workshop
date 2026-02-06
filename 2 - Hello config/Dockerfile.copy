@@ -1,0 +1,5 @@
+FROM alpine:latest
+
+WORKDIR /app
+COPY config.txt /app/config.txt
+CMD ["cat", "/app/config.txt"]

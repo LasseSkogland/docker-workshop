@@ -65,12 +65,12 @@
 ### DOCKER COMPOSE
 | Command | Description |
 |---------|-------------|
-| `docker-compose up` | Start services |
-| `docker-compose up -d` | Start in background |
-| `docker-compose down` | Stop and remove services |
-| `docker-compose stop` | Stop services (don't remove) |
-| `docker-compose logs -f` | Follow logs |
-| `docker-compose exec SERVICE CMD` | Run command in service |
+| `docker compose up` | Start services |
+| `docker compose up -d` | Start in background |
+| `docker compose down` | Stop and remove services |
+| `docker compose stop` | Stop services (don't remove) |
+| `docker compose logs -f` | Follow logs |
+| `docker compose exec SERVICE CMD` | Run command in service |
 
 ---
 
